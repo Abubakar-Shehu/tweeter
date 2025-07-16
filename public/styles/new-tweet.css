@@ -1,0 +1,28 @@
+label {
+  font-family: "Source Sans 3", sans-serif;
+  font: bold;
+  border-bottom: 3px solid black;
+  padding: 10px;
+  width: 100%;
+}
+
+textarea {
+  text-decoration: none;
+}
+
+.bottom-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  font-family: "Bungee", sans-serif;
+}
+
+.bottom-form output {
+  font-family: "Bungee", sans-serif;
+}
+
+.bottom-form button {
+  background-color: #3340b5;
+  color: white;
+  padding: 5px;
+}
