@@ -1,0 +1,9 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: orange;
+  padding-top: 120px;
+  background-image: url(/public/images/assault.png);
+}
