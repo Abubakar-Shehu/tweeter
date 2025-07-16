@@ -1,14 +1,15 @@
 label {
   font-family: "Source Sans 3", sans-serif;
-  font: bold;
+  font-weight: bold;
   border-bottom: 3px solid black;
   padding: 10px;
   width: 100%;
 }
 
 textarea {
-  text-decoration: none;
+  border: none;
   padding: 10px;
+  width: 100%;
 }
 
 .bottom-form {
@@ -26,8 +27,9 @@ textarea {
   background-color: #3340b5;
   color: white;
   padding: 5px;
+  border: none;
 }
 
-.bottom-form button:hover {
+.bottom-form button:focus {
   background-color: #2830a1;
 }
