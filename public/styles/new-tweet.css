@@ -8,6 +8,7 @@ label {
 
 textarea {
   text-decoration: none;
+  padding: 10px;
 }
 
 .bottom-form {
@@ -25,4 +26,8 @@ textarea {
   background-color: #3340b5;
   color: white;
   padding: 5px;
+}
+
+.bottom-form button:hover {
+  background-color: #2830a1;
 }
