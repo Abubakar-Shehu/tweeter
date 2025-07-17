@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  console.log(document)
+  // console.log(document)
 
   $("#tweet-text").on('input', function() {
     const userInput = $(this).val().length;
@@ -17,5 +17,5 @@ $(document).ready(function() {
     }
   });   
 
-  
+
 });
