@@ -28,8 +28,10 @@ textarea {
   color: white;
   padding: 5px;
   border: none;
+  font-size: 20px;
 }
 
-.bottom-form button:focus {
-  background-color: #2830a1;
+.bottom-form button:hover {
+  background-color: #8d96e0;
+  color: black;
 }

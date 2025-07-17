@@ -1,0 +1,42 @@
+.tweet-container {
+  border: 3px solid grey;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.tweet-container:hover {
+  box-shadow: 10px 5px 5px rgb(143, 127, 127);
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-picture {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+
+}
+
+.tweet-container footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid grey;
+  padding-top: 3px;
+}
+
+.tweet-container footer p {
+  font-size: 20px;
+}
+
+.engagement {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.engagement i:hover {
+  color: goldenrod;
+}
