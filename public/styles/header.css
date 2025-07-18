@@ -5,4 +5,13 @@
   align-items: center;
   background-color: orange;
   padding-top: 120px;
+  background-image: url('../images/assault.png');
+}
+
+.page-header h2 {
+  color: white
+}
+
+.page-header img {
+  padding-top: 20px;
 }
