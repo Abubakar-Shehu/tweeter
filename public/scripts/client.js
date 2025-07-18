@@ -10,12 +10,11 @@ $(document).ready(function() {
 
     const formData = $(this).serialize();
 
-    $("#tweet-text").val("")
-
     $.ajax({ url: '/api/tweets' ,method: 'POST', data: formData })
       .then((response) => {
         const newTweet = createTweetElement(response)
         $('.tweet-container').prepend(newTweet)
+        $("#tweet-text").val("")
       }) 
       .catch((error) => {
         console.log(error)
