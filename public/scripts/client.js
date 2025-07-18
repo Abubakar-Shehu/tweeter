@@ -29,7 +29,7 @@ $(document).ready(function() {
         .then((response) => {
           const newTweet = createTweetElement(response)
           $('.tweet-container').prepend(newTweet)
-          $("#tweet-text").empty()
+          $("#tweet-text").val('')
         }) 
         .catch((error) => {
           console.log(error)

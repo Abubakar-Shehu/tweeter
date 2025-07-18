@@ -45,13 +45,13 @@ body {
   .big-screen {
     flex-direction: row;
     padding: 30px;
-    align-items: flex-start;
+    align-items: start;
     gap: 50px;
   }
 
   .page-header {
     justify-content: center;
-    margin: auto;
+    margin-top: 120px;
   }
 
   .container {
