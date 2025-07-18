@@ -6,8 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["screenshot of Tweeter on mobile screen"](#)
-!["screenshot of Tweeter on larger screen"](#)
+!["screenshot of Tweeter on mobile screen"](https://github.com/Abubakar-Shehu/tweeter/blob/master/docs/mobile-screen.jpeg)
+!["screenshot of Tweeter on larger screen"](https://github.com/Abubakar-Shehu/tweeter/blob/master/docs/big-screen.jpeg)
 
 ## Getting Started
 
@@ -21,3 +21,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Nodemon
+
