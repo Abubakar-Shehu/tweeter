@@ -6,14 +6,18 @@
 
 $(document).ready(function() {
   $("form").on('submit', function() {
-    event.preventDefault();
-
     const formData = $(this).serialize();
-    if (formData.content.text === "") {
-      console.log("Please input data")
-    } else if (formData.content.text.length > 140) {
-      console.log("Exceeded character limit")
+    const enteredData = $("#tweet-text").val().trim();
+
+    if (enteredData === "") {
+      alert("Please input data")
+      event.preventDefault();
+    } else if (enteredData.length > 140) {
+      alert("Exceeded character limit")
+      event.preventDefault();
     } else {
+      event.preventDefault();
+
       $.ajax({ url: '/api/tweets' ,method: 'POST', data: formData })
         .then((response) => {
           const newTweet = createTweetElement(response)
