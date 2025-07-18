@@ -12,15 +12,15 @@ $(document).ready(function() {
     
     const enteredData = $("#tweet-text").val().trim();
 
-    $('.error-message').slideUp(400);
+    $('.error-message').slideUp(1400);
 
     if (enteredData === "") {
       $('.error-message p').text("Error: Tweet cannot be empty."); 
-      $('.error-message').slideDown(400)
+      $('.error-message').slideDown(1400)
       event.preventDefault();
     } else if (enteredData.length > 140) {
       $('.error-message p').text("Error: Tweet exceeds 140 characters!"); 
-      $('.error-message').slideDown(400)
+      $('.error-message').slideDown(1400)
       event.preventDefault();
     } else {
       event.preventDefault();

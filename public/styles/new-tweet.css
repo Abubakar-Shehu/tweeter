@@ -37,6 +37,7 @@ textarea {
 }
 
 .error-message {
+  display: none;
   border: 2px solid red;
   color: red;
   background-color: beige;
