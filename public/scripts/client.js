@@ -22,7 +22,7 @@ $(document).ready(function() {
         .then((response) => {
           const newTweet = createTweetElement(response)
           $('.tweet-container').prepend(newTweet)
-          $("#tweet-text").val("")
+          $("#tweet-text").empty()
         }) 
         .catch((error) => {
           console.log(error)
@@ -32,8 +32,17 @@ $(document).ready(function() {
   loadTweets();
 })
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = object => {
   const timeAgo = timeago.format(object.created_at);
+
+  const safeHTML = `<p>${escape(object.content.text)}</p>`;
+
   const $tweet = `<article>
   <header class="tweet-header">
     <div class="profile-picture">
@@ -45,7 +54,7 @@ const createTweetElement = object => {
     </div>
   </header>
   <div>
-    <p>${object.content.text}</p>
+    ${safeHTML}
   </div>
   <footer>
     <p>${timeAgo}</p>
