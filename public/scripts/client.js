@@ -9,16 +9,21 @@ $(document).ready(function() {
     event.preventDefault();
 
     const formData = $(this).serialize();
-
-    $.ajax({ url: '/api/tweets' ,method: 'POST', data: formData })
-      .then((response) => {
-        const newTweet = createTweetElement(response)
-        $('.tweet-container').prepend(newTweet)
-        $("#tweet-text").val("")
-      }) 
-      .catch((error) => {
-        console.log(error)
-      })
+    if (formData.content.text === "") {
+      console.log("Please input data")
+    } else if (formData.content.text.length > 140) {
+      console.log("Exceeded character limit")
+    } else {
+      $.ajax({ url: '/api/tweets' ,method: 'POST', data: formData })
+        .then((response) => {
+          const newTweet = createTweetElement(response)
+          $('.tweet-container').prepend(newTweet)
+          $("#tweet-text").val("")
+        }) 
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   })
   loadTweets();
 })
