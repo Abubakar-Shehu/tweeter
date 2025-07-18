@@ -5,15 +5,22 @@
  */
 
 $(document).ready(function() {
+  $('.error-message').hide();
+
   $("form").on('submit', function() {
     const formData = $(this).serialize();
+    
     const enteredData = $("#tweet-text").val().trim();
 
+    $('.error-message').slideUp(400);
+
     if (enteredData === "") {
-      alert("Please input data")
+      $('.error-message p').text("Error: Tweet cannot be empty."); 
+      $('.error-message').slideDown(400)
       event.preventDefault();
     } else if (enteredData.length > 140) {
-      alert("Exceeded character limit")
+      $('.error-message p').text("Error: Tweet exceeds 140 characters!"); 
+      $('.error-message').slideDown(400)
       event.preventDefault();
     } else {
       event.preventDefault();

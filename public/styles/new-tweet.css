@@ -35,3 +35,10 @@ textarea {
   background-color: #8d96e0;
   color: black;
 }
+
+.error-message {
+  border: 2px solid red;
+  color: red;
+  background-color: beige;
+  margin: 10px 0;
+}
