@@ -7,23 +7,25 @@
 $(document).ready(function() {
   $("form").on('submit', function() {
     event.preventDefault();
-    console.log('Form submitted'); 
+
     const formData = $(this).serialize();
+
+    $("#tweet-text").val("")
 
     $.ajax({ url: '/api/tweets' ,method: 'POST', data: formData })
       .then((response) => {
         const newTweet = createTweetElement(response)
-        $('.tweet-container').append(newTweet)
+        $('.tweet-container').prepend(newTweet)
       }) 
       .catch((error) => {
         console.log(error)
       })
   })
-
+  loadTweets();
 })
 
 const createTweetElement = object => {
-  const timeAgo = timeSince(object.created_at);
+  const timeAgo = timeago.format(object.created_at);
   const $tweet = `<article>
   <header class="tweet-header">
     <div class="profile-picture">
@@ -50,23 +52,18 @@ const createTweetElement = object => {
   return $tweet;
 }
 
-const timeSince = timestamp => {
-  const now = Date.now();
-  const difference = now - timestamp;
-  
-  const seconds = Math.floor(difference / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
-
-  if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
-  if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
-  if (minutes > 0) return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-  return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
-};
-
 const renderTweets = array => {
   for (const tweets of array) {
-    $('.tweet-container').append(createTweetElement(tweets))
+    $('.tweet-container').prepend(createTweetElement(tweets))
   }
+}
+
+const loadTweets = () => {
+  $.ajax({ url: '/api/tweets' ,method: 'GET'})
+  .then((response) => {
+    renderTweets(response)
+  }) 
+  .catch((error) => {
+    console.log(error)
+  })
 }
