@@ -1,10 +1,10 @@
-.tweet-container {
+.tweet-container article {
   border: 3px solid grey;
   padding: 15px;
   margin-top: 20px;
 }
 
-.tweet-container:hover {
+.tweet-container article:hover {
   box-shadow: 10px 5px 5px rgb(143, 127, 127);
 }
 
@@ -20,14 +20,14 @@
 
 }
 
-.tweet-container footer {
+.tweet-container article footer {
   display: flex;
   justify-content: space-between;
   border-top: 2px solid grey;
   padding-top: 3px;
 }
 
-.tweet-container footer p {
+.tweet-container article footer p {
   font-size: 20px;
 }
 
