@@ -42,34 +42,36 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  <header class="page-header">
-    <div>
-      <img src="/images/profile-hex.png" width="100" height="100">
-    </div>
-    <br>
-    <div>
-      <h2>Your Name</h2>
-    </div>
-  </header>
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/api/tweets">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="bottom-form">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-      <div class="error-message">
-        <p></p>
+  <div class="big-screen">
+    <header class="page-header">
+      <div>
+        <img src="/images/profile-hex.png" width="100" height="100">
       </div>
-    </section>
-    <section class="tweet-container">
-    </section>
-  </main>
+      <br>
+      <div>
+        <h2>Your Name</h2>
+      </div>
+    </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/api/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="bottom-form">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+        <div class="error-message">
+          <p></p>
+        </div>
+      </section>
+      <section class="tweet-container">
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>

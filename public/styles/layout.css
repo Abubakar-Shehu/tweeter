@@ -34,3 +34,15 @@ body {
   background-color: inherit;
   margin: 0 auto;
 }
+
+.big-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .big-screen {
+    flex-direction: row;
+  }
+}
