@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -15,31 +16,31 @@ $(document).ready(function() {
     $('.error-message').slideUp(600);
 
     if (enteredData === "") {
-      $('.error-message p').text("Error: Tweet cannot be empty."); 
-      $('.error-message').slideDown(600)
+      $('.error-message p').text("Error: Tweet cannot be empty.");
+      $('.error-message').slideDown(600);
       event.preventDefault();
     } else if (enteredData.length > 140) {
-      $('.error-message p').text("Error: Tweet exceeds 140 characters!"); 
-      $('.error-message').slideDown(600)
+      $('.error-message p').text("Error: Tweet exceeds 140 characters!");
+      $('.error-message').slideDown(600);
       event.preventDefault();
     } else {
       event.preventDefault();
 
       $.ajax({ url: '/api/tweets' ,method: 'POST', data: formData })
         .then((response) => {
-          const newTweet = createTweetElement(response)
-          $('.tweet-container').prepend(newTweet)
-          $("#tweet-text").val('')
-        }) 
-        .catch((error) => {
-          console.log(error)
+          const newTweet = createTweetElement(response);
+          $('.tweet-container').prepend(newTweet);
+          $("#tweet-text").val('');
         })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-  })
+  });
   loadTweets();
-})
+});
 
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -71,23 +72,23 @@ const createTweetElement = object => {
       <i class="fa-solid fa-heart"></i>
     </div>
   </footer>
-</article>`
+</article>`;
 
   return $tweet;
-}
+};
 
 const renderTweets = array => {
   for (const tweets of array) {
-    $('.tweet-container').prepend(createTweetElement(tweets))
+    $('.tweet-container').prepend(createTweetElement(tweets));
   }
-}
+};
 
 const loadTweets = () => {
   $.ajax({ url: '/api/tweets' ,method: 'GET'})
-  .then((response) => {
-    renderTweets(response)
-  }) 
-  .catch((error) => {
-    console.log(error)
-  })
-}
+    .then((response) => {
+      renderTweets(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
